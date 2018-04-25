@@ -37,7 +37,7 @@ let configuration = Configuration(
         .action(name:"build", phases:[
             .toolPhase(name:"Preparing", tool: "BuilderToolExample"),
             .buildPhase(name:"Building", target:"BuilderExample"),
-            .toolPhase(name:"Packaging", tool: "BuilderToolExample", arguments:["blah", "waffle"]),
+            .toolPhase(name:"Packaging", tool: "BuilderToolExample", arguments:["--show-environment", "--show-arguments"]),
             ]),
         .action(name:"test", phases:[
             .testPhase(name:"Testing", target:"BuilderExample"),
