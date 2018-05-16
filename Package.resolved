@@ -5,18 +5,18 @@
         "package": "Builder",
         "repositoryURL": "https://github.com/elegantchaos/Builder.git",
         "state": {
-          "branch": null,
-          "revision": "6ac5059761e017f989beaf4f1b9c85cded04dfa8",
-          "version": "1.0.4"
+          "branch": "issue/12-value-based-settings",
+          "revision": "b48abdb6b80f73dd61c3c603828ca5e111dd065c",
+          "version": null
         }
       },
       {
         "package": "BuilderConfiguration",
         "repositoryURL": "https://github.com/elegantchaos/BuilderConfiguration.git",
         "state": {
-          "branch": null,
-          "revision": "e231d61029b0a2d2b84cad0ab89d46d4e5fad49f",
-          "version": "1.1.2"
+          "branch": "issue/1-value-based-settings",
+          "revision": "87183d1fdf5a0e64d413b6a499b320a656794286",
+          "version": null
         }
       },
       {
