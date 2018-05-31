@@ -1,11 +1,17 @@
 os: osx
-osx_image: xcode9.2
+osx_image: xcode9.3
 language: swift
-install: swift package update
+sudo: required
+install:
+- wget https://swift.org/builds/swift-4.2-branch/xcode/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-05-30-a/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-05-30-a-osx.pkg
+- sudo installer -pkg swift-4.2-DEVELOPMENT-SNAPSHOT-2018-05-30-a-osx.pkg -target /
+- export PATH="/Library/Developer/Toolchains/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-05-30-a.xctoolchain/usr/bin:$PATH"
+- swift --version
+- swift package update
 script:
 - swift run builder run
 notifications:
   email: false
   slack:
     rooms:
-      secure: RcXwEtbidh0RjdBVapqNa6HVkVNnYqyPBsxnecl9I3fLVo3xdmgbjnj1ftWM/zfx/vHY3YcxB9bMQjLbMr0P4PLFGgSXcuuX1FlFSg2gGYx/N3k28M+Aiux3pTvfmTeK8Ik1Za0bugptE8muj2hNiFCCz3VC5jx/t1k0TfgzaKP7tkxzAkFaDSvAjbysgbcwbyodjuKu34jDO6IavNWHSxRiDYiDZFqXeCoRNldATpPGmcjUORygKGfcLqC3emzuf8ML2cywS/6Aq6CiwXWyXambzQq5QFAYbj3iqvw8qWhLOulpelL03/h35IGBBJs5ixOS6HSYTkXS+Ge5+65GAg7r9TEEMb9uJxZrmtleNDYtcEHEfMgz/LEuQtqIdwZ8Azic314cwgXBR5N/78CL22aXOScee7LV6Xd/AX6FrlzYXaf5J+MhK6gsTyYajt2dWfaJI9YaBneMkKCZI90SJV1vX8Fhvfba2bIZ5tgROzVqbbSIkblnixbeHV9tm3f/3o/pH2vm0yK0Vt1DQemcCZ31lQFh0n9bWD9wcA6T1elyvnPMKwFa7+/nHWubU83ys5ByET0GyDKT+53iQ+ztjPIX3VObnjITRZxFoEkdxiaiGfOJqLh3vr8LoD9G3Cd0BaACDVtSIbj2jzQ5EkDWaSsNAskvkkZfBqY0EPekMOA=
+      secure: Vm/7BsbDgrjHX5Y0VowraaryLRokdFFof8gzaxc3QmogOhnSOvn7a9pq3FdS7cx0vzo0q0XAMp3OHVtyVQS3KDiKo8Hl+QXWkqQZtUINYyZoN2JAfQYsURoBSW9XbPsT+MyqFZJPMr5Q4C5HgZcvRDOW+DmJi0mQgb8DfXtnCz3EmEadLOMvl6DISJA9gN4yxj7VfG1vA9cE5zeu4cW2iy+0jbpL4XIiAKFsNVeH+6Y1OGMwia18KpzLr+mwpPt15vCzPVlDuk1fTB+EEHVDfpuL9Ngi2BjVZWmExSkwt1cRriYPKm3+hAhFMM9gM4I9LAZt2sF2aL96uuxlPocq0UAUvV0/DQ1qBpgX6Y2RAJ5W5NDCZgATv/hl2CI47fmHwbsBK6UIE7ykGubxPwi0SKMEjjnpPAmUeqPGs6BIQ/j3XmXQyHe5CE9ZWQAeI1ZD1/qOzrq7RPMbSCzxnGs9k6lkVB6ZPIPG4uuIAMsAPda/REo1bdPYmMXipCWEUtKmeNlPXDoPnkAP3F9gOJWl1oP/F8o1bzpj8UmmWmOK4DeTsrEIC1WNs4c4OXv+DmxtGGB85nwfmq8H/nXKBLAgfeF/Xvv7H2Un7pUMN44NiSTMCr5fB3fXK4bInLBteVAz+Ke9ZQfi4HIEnsgS0B2ksFDvfofzbT4M/arm1xvOHeU=

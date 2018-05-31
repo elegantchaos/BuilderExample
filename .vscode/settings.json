@@ -1,0 +1,13 @@
+{
+        "lldb.executable": "/usr/local/share/swift/default/usr/bin/lldb",
+        "lldb.launch.sourceLanguages": [
+            "cpp",
+            "rust",
+            "swift"
+        ],
+        "lldb.launch.env": {
+            "PATH": "${PATH}"
+        },
+        "swift.languageServerPath": "/home/sam/Projects/langserver-swift/.build/debug/langserver-swift
+"
+    }

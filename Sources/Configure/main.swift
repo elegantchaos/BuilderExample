@@ -6,21 +6,27 @@
 
 import BuilderConfiguration
 
-let settings = Settings(schemes: [
-    .baseScheme(
-        swift: ["Dexample"],
+let settings = Settings(specs: [
+    .base(
+        values: [
+          .setting("definition", "example")
+        ],
         inherits: [
-            .scheme(name: "mac", filter: ["macOS"]),
-            .scheme(name: "debug", filter: ["debug"])
+            .spec(name: "mac", filter: ["macOS"]),
+            .spec(name: "debug", filter: ["debug"])
         ]
     ),
-    .scheme(
+    .spec(
         name: "mac",
-        swift: ["target", "x86_64-apple-macosx10.12"]
+        values: [
+          .setting("minimum-target", "macosx10.12"),
+        ]
     ),
-    .scheme(
+    .spec(
         name: "debug",
-        swift: ["Onone"]
+        values: [
+          .setting("optimisation", "none")
+        ]
     )
     ]
 )
@@ -31,7 +37,7 @@ let configuration = Configuration(
         .action(name:"build", phases:[
             .toolPhase(name:"Preparing", tool: "BuilderToolExample"),
             .buildPhase(name:"Building", target:"BuilderExample"),
-            .toolPhase(name:"Packaging", tool: "BuilderToolExample", arguments:["blah", "waffle"]),
+            .toolPhase(name:"Packaging", tool: "BuilderToolExample", arguments:["--show-environment", "--show-arguments"]),
             ]),
         .action(name:"test", phases:[
             .testPhase(name:"Testing", target:"BuilderExample"),
