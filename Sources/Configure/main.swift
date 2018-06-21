@@ -36,6 +36,7 @@ let configuration = Configuration(
     actions: [
         .action(name:"build", phases:[
             .toolPhase(name:"Preparing", tool: "BuilderToolExample"),
+            .toolPhase(name:"Metadata", tool: "metadata", arguments:["BuilderExample"]),
             .buildPhase(name:"Building", target:"BuilderExample"),
             .toolPhase(name:"Packaging", tool: "BuilderToolExample", arguments:["--show-environment", "--show-arguments"]),
             ]),
