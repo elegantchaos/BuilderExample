@@ -6,4 +6,4 @@
 
 let metadata = BuilderExampleMetadata
 print("Hello world. This is an example that was built by Builder.")
-print("Version \(metadata.version) (\(metadata.build)-\(metadata.commit))")
+print("Version \(metadata.version) (\(metadata.build)-\(metadata.commit)-\(metadata.tags))")
