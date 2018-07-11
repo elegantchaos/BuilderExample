@@ -5,4 +5,4 @@ struct Metadata {
     let commit: String
 }
 
-let BuilderExampleMetadata = Metadata(version: "1.0.0-4-g43c539c", build: "25", tags: "heads/master", commit: "43c539cc91d7891d4d5ae9f5c86dc06ef816fd85")
+let BuilderExampleMetadata = Metadata(version: "1.0", build: "26", tags: "tags/1.0.1", commit: "a110b9acfbd1bee55a6cae5a99ee626fa6d5fcad")

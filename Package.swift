@@ -11,14 +11,9 @@ let package = Package(
             targets: ["BuilderExample"]),
     ],
     dependencies: [
-      // example tool we're going to use in the build
-      .package(url: "https://github.com/elegantchaos/BuilderToolExample.git", from: "1.0.9"),
-
-      // support library we're going to use in the configuration target
-      .package(url: "https://github.com/elegantchaos/BuilderConfiguration.git", from: "1.1.3"),
-
-      // builder itself
-      .package(url: "https://github.com/elegantchaos/Builder.git", from: "1.0.7"),
+        .package(url: "https://github.com/elegantchaos/Builder.git", from: "1.0.9"),                // builder itself
+        .package(url: "https://github.com/elegantchaos/BuilderConfiguration.git", from: "1.1.3"),   // support library we're going to use in the configuration target
+        .package(url: "https://github.com/elegantchaos/BuilderToolExample.git", from: "1.0.6"),     // custom tool we're going to use in the build
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
